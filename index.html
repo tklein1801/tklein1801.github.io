@@ -22,8 +22,8 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="./assets/css/main.css" />
     <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700&amp;display=swap"
     />
     <link
       rel="stylesheet"
@@ -37,56 +37,29 @@
       <div class="loader">
         <div class="spinner"></div>
       </div>
-      <!-- ./loader -->
 
       <div class="content">
         <div id="profile">
           <img src="./assets/images/me.jpg" alt="Picture of mine" />
         </div>
 
-        <div id="links">
-          <button class="treelink" data-target="https://thorben-klein.com/">
-            <i class="fa fa-desktop"></i> Webseite
-          </button>
-          <button
-            class="treelink"
-            data-target="https://instagram.com/thorben.klein/"
-          >
-            <i class="fab fa-instagram"></i> Instagram
-          </button>
-          <button
-            class="treelink"
-            data-target="https://twitter.com/Thorben1801/"
-          >
-            <i class="fab fa-twitter"></i> Twitter
-          </button>
-          <button class="treelink" data-target="https://github.com/tklein1801">
-            <i class="fab fa-github"></i> GitHub
-          </button>
-          <button class="treelink" data-target="https://dulliag.de/">
-            <i class="fas fa-laptop-code"></i> DulliAG
-          </button>
-        </div>
-
-        <div id="navbar"></div>
+        <div id="links"></div>
       </div>
+
+      <footer>
+        <p>
+          Made with <i class="fas fa-heart"></i> by
+          <a href="https://github.com/tklein1801">tklein1801</a>
+        </p>
+      </footer>
     </div>
+    <script type="text/javascript" src="./assets/js/treelink.js"></script>
     <script type="text/javascript">
       window.addEventListener("load", function () {
-        const loader = document.querySelector(".loader");
-        loader.className += " hidden";
+        document.querySelector(".loader").className += " hidden";
       });
 
-      const treelink = document.getElementsByClassName("treelink");
-      const redirect = function () {
-        const redirectURL = this.getAttribute("data-target");
-        window.location.href = redirectURL;
-      };
-
-      let buttons = document.getElementById("links").childElementCount;
-      for (let i = 0; i < buttons; i++) {
-        treelink[i].addEventListener("click", redirect, false);
-      }
+      new Treelink().init("./links.json");
     </script>
   </body>
 </html>

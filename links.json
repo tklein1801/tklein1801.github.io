@@ -1,0 +1,22 @@
+[
+  {
+    "name": "DulliAG",
+    "url": "https://dulliag.de",
+    "icon": "<i class='fas fa-star'></i>"
+  },
+  {
+    "name": "GitHub",
+    "url": "https://github.com/tklein1801",
+    "icon": "<i class='fa fa-desktop'></i>"
+  },
+  {
+    "name": "Instagram",
+    "url": "https://instagram.com/thorben.klein/",
+    "icon": "<i class='fab fa-instagram'></i>"
+  },
+  {
+    "name": "Twitter",
+    "url": "https://twitter.com/Thorben1801/",
+    "icon": "<i class='fab fa-twitter'></i>"
+  }
+]
