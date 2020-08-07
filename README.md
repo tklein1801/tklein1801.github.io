@@ -1,7 +1,3 @@
-<p align="center">
-    <img src="./assets/images/me.jpg" width="240px" height="auto">
-</p>
-
 <h1 align="center"><strong>tklein1801.github.io</strong></h1>
 
 ### Progress
