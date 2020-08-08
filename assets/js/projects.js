@@ -30,7 +30,7 @@ class Projects {
               ? `<a href="${item.github}" target="_blank" data-toggle="cs-tooltip" data-placement="top" data-content="${item.github}"><i class="fab fa-github"></i> GitHub</a>`
               : `<a data-toggle="cs-tooltip" data-placement="top" data-content="Disbled"><i class="fab fa-github"></i> GitHub</a>`;
           document.querySelector(
-            "#projects #output"
+            "#my-projects #output"
           ).innerHTML += `<div class="col-md-4" data-aos="zoom-in">
             <div class="cs-card mb-4">
               <div class="card-header">
