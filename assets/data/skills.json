@@ -1,0 +1,47 @@
+[
+  {
+    "type": "skill",
+    "name": "HTML",
+    "icon": "<i class='fab fa-html5'></i>"
+  },
+  {
+    "type": "skill",
+    "name": "CSS",
+    "icon": "<i class='fab fa-css3-alt'></i>"
+  },
+  {
+    "type": "skill",
+    "name": "JavaScript",
+    "icon": "<i class='fab fa-js-square'></i>"
+  },
+  {
+    "type": "skill",
+    "name": "PHP",
+    "icon": "<i class='fab fa-php'></i>"
+  },
+  {
+    "type": "skill",
+    "name": "Java",
+    "icon": "<i class='fab fa-java'></i>"
+  },
+  {
+    "type": "framework",
+    "name": "Bootstrap",
+    "icon": "<i class='fab fa-bootstrap'></i>"
+  },
+  {
+    "type": "framework",
+    "name": "React Native",
+    "icon": "<i class='fab fa-react'></i>"
+  },
+  {
+    "type": "framework",
+    "name": "jQuery",
+    "icon": "<i class='fab fa-js-square'></i>"
+  },
+  {
+    "type": "framework",
+    "name": "Firebase",
+    "icon": "<i class='fa fa-database'></i>"
+  }
+]

@@ -1,0 +1,213 @@
+@import url(./tooltips.css);
+@font-face {
+  font-family: "JetBrainsMono";
+  src: url("../fonts/JetBrainsMono-Regular.eot");
+  src: url("../fonts/JetBrainsMono-Regular.woff2") format("woff2"),
+    url("../fonts/JetBrainsMono-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "JetBrainsMono-Bold";
+  src: url("../fonts/JetBrainsMono-Bold.eot");
+  src: url("../fonts/JetBrainsMono-Bold.woff2") format("woff2"),
+    url("../fonts/JetBrainsMono-Bold.woff") format("woff");
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a !important;
+  scroll-behavior: smooth;
+  font-family: "JetBrainsMono" !important;
+  font-size: 1.02rem;
+  color: #fff !important;
+}
+
+::-webkit-scrollbar {
+  width: 0.5em;
+}
+::-webkit-scrollbar-track {
+  background-color: #212121;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(51, 51, 51);
+  border-radius: 5px;
+}
+::selection {
+  background: #02d463;
+  color: #fff;
+}
+::-moz-selection {
+  background: #02d463;
+  color: #fff;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+section {
+  padding: 4rem 0;
+}
+
+/* Navbar */
+.navbar {
+  transition: all 0.5s ease 0s;
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+.navbar > div {
+  width: 75%;
+}
+.navbar.scrolled {
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+  background-color: #1a1a1a;
+  color: white;
+}
+.navbar .navbar-brand {
+  color: #02d463;
+}
+.navbar .navbar-nav .nav-item {
+  margin-left: 1rem;
+}
+.navbar .navbar-nav .nav-link {
+  transition: all 0.5s ease 0s;
+  color: #fff !important;
+}
+.navbar .navbar-nav .nav-link:hover {
+  text-decoration: none !important;
+  color: #02d463 !important;
+}
+@media (max-width: 600px) {
+  .navbar > div {
+    width: 100%;
+  }
+  .navbar .navbar-toggler:focus {
+    box-shadow: none;
+  }
+  .navbar .menu-btn {
+    transition: all 0.5s ease 0s;
+    margin-top: 10%;
+  }
+  .navbar .menu-btn > .line {
+    transition: all 0.2s ease 0s;
+    width: 1.75rem;
+    height: 0.125rem;
+    margin-bottom: 5px;
+    background-color: #bdbdbd;
+  }
+  .navbar .menu-btn.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    background-color: #02d463;
+  }
+  .navbar .menu-btn.active .line:nth-child(2) {
+    opacity: 0;
+  }
+  .navbar .menu-btn.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+    background-color: #02d463;
+  }
+  .navbar .navbar-collapse .nav-item {
+    margin-left: 0;
+    margin-bottom: 0.1rem;
+  }
+}
+
+/* Footer */
+footer {
+  background: #111111;
+}
+footer .links a {
+  padding-left: 0.75rem;
+  text-decoration: none !important;
+  font-size: 1.15rem;
+}
+footer .links i {
+  transition: all 0.3s ease 0s;
+  color: #bdbdbd;
+}
+footer .links > a > i:hover,
+footer i {
+  color: #02d463;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "JetBrainsMono-Bold";
+}
+p {
+  transition: all 0.5s ease 0s;
+  color: #bdbdbd;
+}
+.font-weight-bold {
+  font-family: "JetBrainsMono-Bold" !important;
+}
+p:hover {
+  cursor: default;
+  color: #fff;
+}
+p > a,
+a {
+  transition: all 0.3s ease !important;
+  color: #bdbdbd !important;
+  text-decoration: underline #02d463;
+}
+p > a:hover,
+a:hover {
+  transition: all 0.3s ease !important;
+  color: #02d463 !important;
+  text-decoration: underline #02d463;
+}
+
+.animated-text {
+  overflow: hidden;
+  height: 1.1em;
+  word-wrap: break-word;
+  white-space: nowrap;
+  animation: typing 3s steps(23) forwards;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 23ch;
+  }
+}
+
+/* 
+ * Buttons 
+ * a.btn - statements are required bcause of my typography
+ */
+.btn,
+a.btn {
+  text-decoration: none !important;
+  border-width: 2px !important;
+}
+a.btn-outline-success {
+  color: #02d463 !important;
+}
+a.btn.btn-outline-success:hover {
+  color: #fff !important;
+}
+a.btn-success {
+  color: #fff !important;
+}
+.btn.btn-success:hover {
+  background-color: transparent !important;
+  color: #02d463 !important;
+}
+.btn:focus {
+  box-shadow: unset !important;
+}

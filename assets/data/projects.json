@@ -1,0 +1,44 @@
+[
+  {
+    "show": true,
+    "image": "./assets/data/images/portfolio.png",
+    "name": "Portfolio",
+    "github": "https://github.com/tklein1801/tklein1801.github.io",
+    "demo": "https://tklein1801.dulliag.de"
+  },
+  {
+    "show": true,
+    "image": "./assets/data/images/dulliag-website.png",
+    "name": "DulliAG Website",
+    "github": false,
+    "demo": "https://dulliag.de"
+  },
+  {
+    "show": true,
+    "image": "./assets/data/images/dulliag-auktionen.png",
+    "name": "DAG-Auktionshaus",
+    "github": "https://github.com/tklein1801/DAG-Auktionshaus/",
+    "demo": "https://dulliag.de/Auktionshaus/"
+  },
+  {
+    "show": true,
+    "image": false,
+    "name": "DAG-Infoapp",
+    "github": "https://github.com/tklein1801/DAG-Infoapp",
+    "demo": false
+  },
+  {
+    "show": true,
+    "image": false,
+    "name": "Amazon-Price-Checker",
+    "github": "https://github.com/tklein1801/Amazon-Price-Checker",
+    "demo": false
+  },
+  {
+    "show": true,
+    "image": "./assets/data/images/shoutbox.png",
+    "name": "ShoutBox",
+    "github": "https://github.com/tklein1801/ShoutBox",
+    "demo": false
+  }
+]

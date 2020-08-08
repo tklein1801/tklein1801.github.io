@@ -1,0 +1,88 @@
+[data-toggle="cs-tooltip"] {
+  position: relative;
+}
+[data-toggle="cs-tooltip"]::before {
+  z-index: 100;
+  content: attr(data-content);
+  display: none;
+  position: absolute;
+  width: max-content;
+  padding: 0.75rem 1rem 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  color: #02d463;
+}
+[data-toggle="cs-tooltip"]::after {
+  z-index: 100;
+  display: none;
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+}
+[data-toggle="cs-tooltip"]:hover::before,
+[data-toggle="cs-tooltip"]:hover::after {
+  display: inline-block;
+}
+
+[data-toggle="cs-tooltip"][data-placement="top"]::before {
+  transform: translateX(-50%);
+  bottom: calc(100% + 5px); /* // TODO Store the px-amount in an variable */
+  left: 50%;
+  margin-bottom: 3px; /*add the border-width of the button as margin-bottom // TODO Store this amount in an variable*/
+}
+[data-toggle="cs-tooltip"][data-placement="top"]::after {
+  transform: translateX(-50%);
+  bottom: 100%;
+  left: 50%;
+  margin-bottom: 3px; /*add the border-width of the button as margin-bottom // TODO Store this amount in an variable*/
+  border-bottom-width: 0;
+  border-top-color: rgba(0, 0, 0, 0.8);
+}
+
+[data-toggle="cs-tooltip"][data-placement="right"]::before {
+  transform: translateY(-50%);
+  top: 50%;
+  left: calc(100% + 5px);
+  margin-left: 3px; /*add the border-width of the button as margin-left // TODO Store this amount in an variable*/
+}
+[data-toggle="cs-tooltip"][data-placement="right"]::after {
+  transform: translateY(-50%);
+  top: 50%;
+  left: 100%;
+  margin-left: 3px; /*add the border-width of the button as margin-left // TODO Store this amount in an variable*/
+  border-left-width: 0;
+  border-right-color: rgba(0, 0, 0, 0.8);
+}
+
+[data-toggle="cs-tooltip"][data-placement="bottom"]::before {
+  transform: translateX(-50%);
+  top: calc(100% + 5px);
+  left: 50%;
+  margin-top: 3px; /*add the border-width of the button as margin-top // TODO Store this amount in an variable*/
+}
+[data-toggle="cs-tooltip"][data-placement="bottom"]::after {
+  transform: translateX(-50%);
+  top: 100%;
+  left: 50%;
+  margin-top: 3px; /*add the border-width of the button as margin-top // TODO Store this amount in an variable*/
+  border-top-width: 0;
+  border-bottom-color: rgba(0, 0, 0, 0.8);
+}
+
+[data-toggle="cs-tooltip"][data-placement="left"]::before {
+  transform: translateY(-50%);
+  top: 50%;
+  right: calc(100% + 5px);
+  margin-right: 3px; /*add the border-width of the button as margin-right // TODO Store this amount in an variable*/
+}
+[data-toggle="cs-tooltip"][data-placement="left"]::after {
+  transform: translateY(-50%);
+  top: 50%;
+  right: 100%;
+  margin-right: 3px; /*add the border-width of the button as margin-right // TODO Store this amount in an variable*/
+  border-right-width: 0;
+  border-left-color: rgba(0, 0, 0, 0.8);
+}
