@@ -1,4 +1,5 @@
 @import url(./tooltips.css);
+@import url(./context-menu.css);
 @font-face {
   font-family: "JetBrainsMono";
   src: url("../fonts/JetBrainsMono-Regular.eot");

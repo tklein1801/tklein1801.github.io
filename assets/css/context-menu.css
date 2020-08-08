@@ -1,0 +1,55 @@
+#context-menu {
+  z-index: 1200;
+  background: #1a1a1a;
+  padding: 5px;
+  position: fixed;
+  user-select: none;
+  display: none;
+  flex-direction: column;
+  min-width: 200px;
+  box-shadow: rgb(0, 0, 0) 0px 0px 20px;
+}
+#context-menu.show {
+  display: flex;
+}
+#context-menu .seperator {
+  height: 0px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.menu-head {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.menu-head span {
+  color: white;
+  font-size: 1.2rem;
+}
+.menu-head img {
+  width: 1.8rem;
+  pointer-events: none;
+}
+.button-container {
+  flex-direction: column;
+}
+.button-container button,
+.button-container a {
+  margin-left: 8px;
+  margin-right: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: #fff;
+  background-color: transparent !important;
+  outline: none;
+}
+.button-container button:last-child,
+.button-container a:last-child {
+  margin-bottom: 5px;
+}
+.button-container button:hover,
+.button-container a:hover {
+  cursor: pointer;
+  background: #02d463 !important;
+}
+.button-container button:focus,
+.button-container a:focus {
+  outline: none !important;
+}

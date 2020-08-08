@@ -19,6 +19,17 @@
   </head>
   <body>
     <div class="wrapper">
+      <div id="context-menu" class="rounded">
+        <div class="menu-head rounded m-2 p-2 d-flex justify-content-center align-items-center">
+          <img class="rounded-circle" src="./assets/images/me.jpg" alt="Logo" />
+          <p class="ml-1 mb-0 text-light">Thorben</p>
+        </div>
+        <div class="button-container d-flex rounded">
+          <button class="rounded border-0" onclick="location.reload()">Reload</button>
+          <button class="rounded border-0" onclick="onClose()">Close</button>
+        </div>
+      </div>
+
       <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
           <p class="navbar-brand font-weight-bold mb-0" href="#">Thorben</p>
@@ -158,6 +169,7 @@
     <script type="text/javascript" src="./assets/js/skills.js"></script>
     <script type="text/javascript" src="./assets/js/projects.js"></script>
     <script type="text/javascript" src="./assets/js/aos.js"></script>
+    <script type="text/javascript" src="./assets/js/context-menu.js"></script>
     <script>
       new Skills().init("./assets/data/skills.json");
       new Projects().init("./assets/data/projects.json");
