@@ -184,15 +184,19 @@
           subject: "Portfolio Contact",
           message: form.querySelector("#message").value,
         };
-        fetch("https://api.dulliag.de/contact/v1/create.php", {
+        $.ajax({
+          url: "https://api.dulliag.de/contact/v1/create.php",
+          data: contact,
           method: "POST",
-          body: JSON.stringify(contact),
-        })
-          .then((response) => response.json())
-          .then((response) => {
-            console.log(response);
-            form.reset();
-          });
+          success: function (response) {
+            if (response == "1") {
+              form.reset();
+            }
+          },
+          error: function (error) {
+            console.error(error);
+          },
+        });
       });
     </script>
   </body>
