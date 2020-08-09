@@ -13,6 +13,7 @@
 
 ### Ressources
 
+[jQuery](https://api.jquery.com/)
 [Bootstrap v5](https://v5.getbootstrap.com/)
 [Google Fonts](https://fonts.google.com/)
 [JetBrains-Mono](https://www.jetbrains.com/lp/mono/)
