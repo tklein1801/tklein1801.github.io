@@ -28,7 +28,7 @@ class Projects {
           github =
             item.github != false
               ? `<a href="${item.github}" target="_blank" data-toggle="cs-tooltip" data-placement="top" data-content="${item.github}"><i class="fab fa-github"></i> GitHub</a>`
-              : `<a data-toggle="cs-tooltip" data-placement="top" data-content="Disbled"><i class="fab fa-github"></i> GitHub</a>`;
+              : `<a data-toggle="cs-tooltip" data-placement="top" data-content="Disabled"><i class="fab fa-github"></i> GitHub</a>`;
           document.querySelector(
             "#my-projects #output"
           ).innerHTML += `<div class="col-md-4" data-aos="zoom-in">
