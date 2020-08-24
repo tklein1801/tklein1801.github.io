@@ -1,3 +1,7 @@
+<p align="center">
+   <img src="./assets/data/images/portfolio.png" alt="Portfolio screenshot" width="700px" height="auto">
+</p>
+
 <h1 align="center"><strong>tklein1801.dulliag.de</strong></h1>
 
 ### Progress
