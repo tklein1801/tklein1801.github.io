@@ -22,3 +22,11 @@
 [DulliAG-API](https://dulliag.de)
 [AOS](https://github.com/michalsnik/aos)
 [Context-Menu](https://github.com/tklein1801/Context-Menu)
+
+### Credits
+
+For the design of my website I inpsired myself on [this design](https://www.bartzalewski.com/).
+I copied their
+
+- color palette
+- about-me layout
