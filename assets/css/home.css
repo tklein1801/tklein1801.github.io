@@ -1,5 +1,5 @@
 section:nth-child(even) {
-  background-color: #212121;
+  background-color: #1a1a1a;
 }
 section:nth-child(odd) {
   background-color: #111111;

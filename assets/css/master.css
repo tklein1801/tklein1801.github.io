@@ -69,6 +69,7 @@ section {
   padding-bottom: 0.75rem !important;
   background-color: #1a1a1a;
   color: white;
+  box-shadow: rgb(0, 0, 0) 0px 0px 20px;
 }
 .navbar .navbar-brand {
   color: #02d463;
