@@ -9,9 +9,23 @@
   {
     "show": true,
     "image": "./assets/data/images/dulliag-website.png",
-    "name": "DulliAG Website",
+    "name": "DulliAG Webseite",
     "github": false,
     "demo": "https://dulliag.de"
+  },
+  {
+    "show": true,
+    "image": "https://user-images.githubusercontent.com/58918135/88481679-16d22380-cf5d-11ea-9306-a1597b3c4a14.png",
+    "name": "IRP-Network",
+    "github": "https://github.com/InsomniaRP/InsomniaRP-Network/",
+    "demo": false
+  },
+  {
+    "show": true,
+    "image": "https://files.dulliag.de/share/Discord_em2EEdVWdO.png",
+    "name": "DAG-Discord-Bot",
+    "github": false,
+    "demo": "https://discord.gg/szQjjuH"
   },
   {
     "show": true,
