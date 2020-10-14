@@ -11,6 +11,11 @@
   },
   {
     "type": "skill",
+    "name": "SCSS",
+    "icon": "<i class='fab fa-sass'></i>"
+  },
+  {
+    "type": "skill",
     "name": "JavaScript",
     "icon": "<i class='fab fa-js-square'></i>"
   },
@@ -28,6 +33,11 @@
     "type": "framework",
     "name": "Bootstrap",
     "icon": "<i class='fab fa-bootstrap'></i>"
+  },
+  {
+    "type": "framework",
+    "name": "ReactJS",
+    "icon": "<i class='fab fa-react'></i>"
   },
   {
     "type": "framework",

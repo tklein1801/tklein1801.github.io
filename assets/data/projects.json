@@ -2,54 +2,75 @@
   {
     "show": true,
     "image": "./assets/data/images/portfolio.png",
-    "name": "Portfolio",
+    "name": "This website",
     "github": "https://github.com/tklein1801/tklein1801.github.io",
     "demo": "https://tklein1801.dulliag.de"
   },
   {
     "show": true,
+    "image": "https://files.dulliag.de/share/msedge_A981LjTSzl.png",
+    "name": "EFT Market",
+    "github": false,
+    "demo": "https://eft.dulliag.de"
+  },
+  {
+    "show": true,
+    "image": "https://files.dulliag.de/share/msedge_MYxeX1Ex2O.png",
+    "name": "React Auctions",
+    "github": "https://github.com/tklein1801/React-Auctions",
+    "demo": "https://auktionen.dulliag.de"
+  },
+  {
+    "show": true,
     "image": "./assets/data/images/dulliag-website.png",
-    "name": "DulliAG Webseite",
+    "name": "DAG • Webseite",
     "github": false,
     "demo": "https://dulliag.de"
   },
   {
     "show": true,
     "image": "https://user-images.githubusercontent.com/58918135/88481679-16d22380-cf5d-11ea-9306-a1597b3c4a14.png",
-    "name": "IRP-Network",
-    "github": "https://github.com/InsomniaRP/InsomniaRP-Network/",
-    "demo": false
+    "name": "IRP • Network",
+    "github": false,
+    "demo": "https://net.insomnia-rp.de/"
   },
   {
     "show": true,
     "image": "https://files.dulliag.de/share/Discord_em2EEdVWdO.png",
-    "name": "DAG-Discord-Bot",
-    "github": false,
+    "name": "DulliBot",
+    "github": "https://github.com/tklein1801/DulliBot/",
     "demo": "https://discord.gg/szQjjuH"
   },
   {
     "show": true,
+    "image": "https://raw.githubusercontent.com/tklein1801/DAG-Infopanel/master/assets/img/login.png",
+    "name": "DAG • Infopanel",
+    "github": "https://github.com/tklein1801/DAG-Infopanel",
+    "demo": "https://info.dulliag.de/"
+  },
+  {
+    "show": false,
     "image": "./assets/data/images/dulliag-auktionen.png",
-    "name": "DAG-Auktionshaus",
+    "name": "DAG • Auktionshaus",
     "github": "https://github.com/tklein1801/DAG-Auktionshaus/",
     "demo": "https://dulliag.de/Auktionshaus/"
   },
   {
     "show": true,
-    "image": false,
-    "name": "DAG-Infoapp",
+    "image": "https://files.dulliag.de/share/msedge_wtridJgelh.png",
+    "name": "DAG • Infoapp",
     "github": "https://github.com/tklein1801/DAG-Infoapp",
     "demo": false
   },
   {
-    "show": true,
+    "show": false,
     "image": false,
     "name": "Amazon-Price-Checker",
     "github": "https://github.com/tklein1801/Amazon-Price-Checker",
     "demo": false
   },
   {
-    "show": true,
+    "show": false,
     "image": "./assets/data/images/shoutbox.png",
     "name": "ShoutBox",
     "github": "https://github.com/tklein1801/ShoutBox",
