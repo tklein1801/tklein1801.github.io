@@ -25,11 +25,6 @@
     "icon": "<i class='fab fa-php'></i>"
   },
   {
-    "type": "skill",
-    "name": "Java",
-    "icon": "<i class='fab fa-java'></i>"
-  },
-  {
     "type": "framework",
     "name": "Bootstrap",
     "icon": "<i class='fab fa-bootstrap'></i>"

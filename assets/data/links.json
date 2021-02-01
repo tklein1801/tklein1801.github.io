@@ -1,10 +1,5 @@
 [
   {
-    "name": "Portfolio",
-    "url": "https://tklein.dulliag.de/",
-    "icon": "<i class='fas fa-id-card'></i>"
-  },
-  {
     "name": "DulliAG",
     "url": "https://dulliag.de",
     "icon": "<i class='fas fa-star'></i>"
