@@ -16,19 +16,9 @@ class Projects {
     this.getItems(path, function (response) {
       const data = JSON.parse(response);
       data.forEach((item) => {
-        if (item.show != false) {
-          var github, demo, image;
+        if (item.show) {
+          var image = item.image != false ? item.image : "./assets/data/images/placeholder.png";
 
-          image = item.image != false ? item.image : "./assets/data/images/placeholder.png";
-
-          demo =
-            item.demo != false
-              ? `<a href="${item.demo}" target="_blank" data-toggle="cs-tooltip" data-placement="top" data-content="${item.demo}"><i class="fab fa-chrome"></i> Demo</a>`
-              : `<a data-toggle="cs-tooltip" data-placement="top" data-content="Disabled"><i class="fab fa-chrome"></i> Demo</a>`;
-          github =
-            item.github != false
-              ? `<a href="${item.github}" target="_blank" data-toggle="cs-tooltip" data-placement="top" data-content="${item.github}"><i class="fab fa-github"></i> GitHub</a>`
-              : `<a data-toggle="cs-tooltip" data-placement="top" data-content="Disabled"><i class="fab fa-github"></i> GitHub</a>`;
           document.querySelector(
             "#my-projects #output"
           ).innerHTML += `<div class="col-md-4" data-aos="zoom-in">
@@ -45,8 +35,14 @@ class Projects {
                   <h5 class="project-title">${item.name}</h5>
                 </div>
                 <div class="col-12">
-                  ${demo}
-                  ${github}
+                  ${
+                    item.demo != null &&
+                    `<a href="${item.demo}" target="_blank" data-toggle="cs-tooltip" data-placement="top" data-content="${item.demo}"><i class="fab fa-chrome"></i> Demo</a>`
+                  }
+                  ${
+                    item.github !== null &&
+                    `<a href="${item.github}" target="_blank" data-toggle="cs-tooltip" data-placement="top" data-content="${item.github}"><i class="fab fa-github"></i> GitHub</a>`
+                  }
                   </div>
               </div>
             </div>
