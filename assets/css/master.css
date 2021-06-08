@@ -65,14 +65,17 @@ section {
   width: 75%;
 }
 .navbar.scrolled {
-  padding-top: 0.75rem !important;
-  padding-bottom: 0.75rem !important;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
   background-color: #1a1a1a;
   color: white;
   box-shadow: rgb(0, 0, 0) 0px 0px 20px;
 }
 .navbar .navbar-brand {
   color: #02d463;
+}
+.navbar .navbar-toggler {
+  padding: 0;
 }
 .navbar .navbar-nav .nav-item {
   margin-left: 1rem;
