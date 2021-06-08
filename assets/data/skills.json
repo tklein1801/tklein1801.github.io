@@ -42,7 +42,7 @@
   {
     "type": "framework",
     "name": "jQuery",
-    "icon": "<i class='fab fa-js-square'></i>"
+    "icon": "<i class='fas fa-cross'></i>"
   },
   {
     "type": "framework",
