@@ -1,58 +1,94 @@
-class Projects {
-  getItems(path, callback) {
-    const xobj = new XMLHttpRequest();
-    xobj.overrideMimeType("application/json");
-    xobj.open("GET", path, true);
-    xobj.onreadystatechange = function () {
-      if (xobj.readyState == 4 && xobj.status == "200") {
-        callback(xobj.responseText);
-      }
-    };
+const project_names = [
+  {
+    name: "A3RLRPG-Infoapp",
+    order: 1,
+  },
+  {
+    name: "A3RLRPG-Infopanel",
+    order: 2,
+  },
+  {
+    name: "DulliBot",
+    order: 3,
+  },
+  {
+    name: "tklein1801.github.io",
+    order: 4,
+  },
+  {
+    name: "BBS-Mitfahrzentrale",
+    order: 5,
+  },
+  {
+    name: "BBS-Grid-Website",
+    order: 6,
+  },
+  {
+    name: "Amazon-Price-Checker",
+    order: 7,
+  },
+  {
+    name: "ShoutBox",
+    order: 8,
+  },
+  {
+    name: "Context-Menu",
+    order: 9,
+  },
+];
+(async () => {
+  var project_list = [];
+  project_list.fill({}, 0, project_names.length);
 
-    xobj.send(null);
-  }
+  // Get private repos
+  var private = await fetch("https://api.github.com/users/tklein1801/repos");
+  var private_repos = await private.json();
 
-  init(path) {
-    this.getItems(path, function (response) {
-      const data = JSON.parse(response);
-      data.forEach((item) => {
-        if (item.show) {
-          var placeholder = "./assets/data/images/placeholder.png",
-            projectName = item.name,
-            demo = "",
-            repo = "";
+  // Get public dulliag repos
+  var org = await fetch("https://api.github.com/orgs/dulliag/repos");
+  var org_repos = await org.json();
 
-          if (item.image !== null) placeholder = item.image;
-          if (item.demo !== null)
-            demo = `<a href="${item.demo}" target="_blank"><i class="fab fa-chrome"></i> Preview</a>`;
-          if (item.github !== null)
-            repo = `<a href="${item.github}" target="_blank"><i class="fab fa-github"></i> Repository </a>`;
+  private_repos.forEach((repo) => {
+    var match = project_names.filter((project) => project.name == repo.name),
+      isWanted = match.length == 1;
+    if (isWanted) project_list[match[0].order - 1] = repo;
+  });
 
-          document.querySelector(
-            "#my-projects #output"
-          ).innerHTML += `<div class="col-md-4" data-aos="zoom-in">
-            <div class="cs-card mb-4">
-              <div class="card-header">
-                <img
-                  class="rounded"
-                  src="${placeholder}"
-                  alt="Project-image"
-                  loading="lazy"
-                />
-              </div>
-              <div class="card-body rounded">
-                <div class="col-12 mb-3">
-                  <h5 class="project-title">${projectName}</h5>
-                </div>
-                <div class="col-12">
-                  ${demo}
-                  ${repo}
-                </div>
-              </div>
-            </div>
-          </div>`;
-        }
-      });
-    });
-  }
-}
+  org_repos.forEach((repo) => {
+    var match = project_names.filter((project) => project.name == repo.name),
+      isWanted = match.length == 1;
+    if (isWanted) project_list[match[0].order - 1] = repo;
+  });
+
+  project_list.forEach((repo) => {
+    var desc = repo.description !== null ? repo.description : "Keine Beschreibung";
+    document.querySelector("#projects").innerHTML += `<div class="project-card">
+      <div>
+        <h4 class="repo-name">
+          <a href="${repo.owner.html_url}" class="repo-link">@${repo.owner.login}</a>/<a href="${repo.html_url}" class="repo-link">${repo.name}</a>  
+        </h4>
+        <p class="repo-description">${desc}</a>
+        <div class="repo-info row">
+          <div>
+            <i class="far fa-file-alt"></i>
+            <p>${repo.language}</p>
+          </div>
+          
+          <div>
+            <a href="${repo.html_url}/stargazers" class="repo-link row">
+              <i class="far fa-star"></i>
+              <p>${repo.stargazers_count}</p>
+            </a>
+          </div>
+
+          <div>
+            <a href="${repo.html_url}/network/members" class="repo-link row">
+              <i class="fas fa-code-branch"></i>
+              <p>${repo.forks_count}</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  });
+})();

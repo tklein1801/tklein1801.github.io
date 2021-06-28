@@ -2,158 +2,104 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width-device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="id=edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#02d463" />
     <meta property="og:image" content="./assets/images/me.jpg" />
-    <meta name="description" content="Public portfolio of Thorben Klein" />
+    <meta name="description" content="Information about Thorben Klein" />
     <meta property="og:type" content="website" />
-    <title>Thorben Klein • Home</title>
-    <link rel="icon" type="image/jpeg" sizes="500x500" href="./assets/images/me.jpg" />
-
+    <link rel="icon" type="image/jpg" sizes="500x500" href="./assets/images/me.jpg" />
+    <title>Thorben Klein</title>
     <link rel="stylesheet" href="./assets/css/master.css" />
-    <link rel="stylesheet" href="./assets/css/home.css" />
-    <link rel="stylesheet" href="./assets/css/bootstrap.css" />
-    <link rel="stylesheet" href="./assets/css/fontawesome.css" />
-    <link rel="stylesheet" href="./assets/css/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <div class="wrapper">
-      <div id="context-menu" class="rounded">
-        <div class="menu-head rounded m-2 p-2 d-flex justify-content-center align-items-center">
-          <img class="rounded-circle" src="./assets/images/me.jpg" alt="Logo" />
-          <p class="ml-1 mb-0 text-light">Thorben</p>
+      <aside>
+        <div>
+          <img src="./assets/images/me.jpg" alt="Picure of me" />
+          <h2 class="name">Thorben Klein</h2>
+          <ul>
+            <li>
+              <a href="//github.com/tklein1801/">GitHub</a>
+            </li>
+            <li>
+              <a href="//www.youtube.com/channel/UCp2WmEyXqFnSTR03lNV6q6Q/">YouTube</a>
+            </li>
+            <li>
+              <a href="//instagram.com/thorben.klein/">Instagram</a>
+            </li>
+            <li>
+              <a href="//github.com/tklein1801/tklein1801.github.io/">Source Code</a>
+            </li>
+          </ul>
         </div>
-        <div class="button-container d-flex rounded">
-          <button class="rounded border-0" onclick="location.reload()">Reload</button>
-          <button class="rounded border-0" onclick="onClose()">Close</button>
-        </div>
-      </div>
-
-      <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-          <p class="navbar-brand font-weight-bold mb-0" href="#">Thorben</p>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarLinks"
-          >
-            <div class="menu-btn">
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-            </div>
-          </button>
-          <div id="navbarLinks" class="collapse navbar-collapse">
-            <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
-              <li class="nav-item"><a href="#about-me" class="nav-link">About me</a></li>
-              <li class="nav-item">
-                <a href="#my-projects" class="btn btn-outline-success">My projects</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
-      <div class="page-content">
-        <section id="header">
-          <div
-            class="container h-100"
-            style="
-              display: flex;
-              align-items: flex-start;
-              justify-content: center;
-              flex-direction: column;
-            "
-          >
-            <h1>Thorben Klein</h1>
-            <a href="#about-me" class="btn btn-success">More about me...</a>
-          </div>
+      </aside>
+      <main>
+        <section class="header">
+          <nav>
+            <a href="#about-me">About me</a>
+            <a href="#my-projects">My projects</a>
+            <a href="#my-packages">My packages</a>
+          </nav>
         </section>
 
-        <section id="about-me">
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-6" data-aos="zoom-in">
-                <h3>About me</h3>
-                <p>
-                  Hello! I'm just a little schoolboy who's doing some programming & other cool
-                  stuff. On this website you can have a look on projects & some other stuff I made
-                  in the past...
-                </p>
+        <section id="about">
+          <div class="row">
+            <div>
+              <h1 id="about-me">About me</h1>
+              <p>
+                Hello! I'm just a little schoolboy who's doing some programming & other cool stuff.
+                On this website you can have a look on projects & some other stuff I made in the
+                past...
+              </p>
 
-                <p class="mb-2">Skills I own...</p>
+              <h4>Skills I own...</h4>
 
-                <ul id="skills" class="skill-list"></ul>
+              <ul id="skills" class="skill-list">
+                <li class="skill-item"><i class="fab fa-html5"></i> HTML</li>
+                <li class="skill-item"><i class="fab fa-html5"></i> JSX</li>
+                <li class="skill-item"><i class="fab fa-css3-alt"></i> CSS</li>
+                <li class="skill-item"><i class="fab fa-sass"></i> SCSS</li>
+                <li class="skill-item"><i class="fab fa-js-square"></i> JavaScript</li>
+              </ul>
 
-                <p class="my-2">Frameworks & libaries</p>
-                <ul id="frameworks" class="skill-list"></ul>
-              </div>
-              <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
-                <img class="me rounded" src="./assets/images/me.jpg" alt="Me" data-aos="zoom-in" />
-              </div>
+              <h4>Frameworks & libaries</h4>
+              <ul id="frameworks" class="skill-list">
+                <li class="skill-item"><i class="fab fa-react"></i> ReactJS</li>
+                <li class="skill-item"><i class="fab fa-react"></i> React Native</li>
+                <li class="skill-item"><i class="fab fa-bootstrap"></i> Bootstrap</li>
+                <li class="skill-item"><i class="fa fa-database"></i> Firebase</li>
+                <li class="skill-item"><i class="fas fa-cross"></i> jQuery</li>
+              </ul>
+            </div>
+            <div>
+              <img class="me" src="./assets/images/me.jpg" alt="Picure of mine" />
             </div>
           </div>
         </section>
 
-        <section id="my-projects">
-          <div class="container">
-            <h3>My projects</h3>
-            <h6 class="mb-3">
-              <a href="https://github.com/tklein1801?tab=repositories">View more...</a>
-            </h6>
+        <section>
+          <h1 id="my-projects">My projects</h1>
 
-            <div id="output" class="row"></div>
-          </div>
+          <div id="projects"></div>
         </section>
 
-        <footer>
-          <div class="row d-flex align-items-center mx-0 py-4">
-            <div class="col text-center">
-              <p class="mb-0">Made by <a href="https://github.com/tklein1801">tklein1801</a></p>
-              <small><a href="https://dulliag.de/impressum.php">Imprint</a></small>
-            </div>
-          </div>
-        </footer>
-      </div>
+        <section>
+          <h1 id="my-packages">My npm-packages</h1>
+
+          <div id="packages"></div>
+        </section>
+      </main>
     </div>
 
-    <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
-    <script type="text/javascript" src="./assets/js/bootstrap.js"></script>
-    <script type="text/javascript" src="./assets/js/navbar.js"></script>
-    <script type="text/javascript" src="./assets/js/skills.js"></script>
-    <script type="text/javascript" src="./assets/js/projects.js"></script>
-    <script type="text/javascript" src="./assets/js/aos.js"></script>
-    <script type="text/javascript" src="./assets/js/context-menu.js"></script>
-    <script>
-      new Skills().init("./assets/data/skills.json");
-      new Projects().init("./assets/data/projects.json");
-      AOS.init();
-
-      document.querySelector("#contact-me").addEventListener("submit", function (e) {
-        e.preventDefault();
-        const form = this;
-        const contact = {
-          name: form.querySelector("#name").value,
-          email: form.querySelector("#email").value,
-          subject: "Portfolio Contact",
-          message: form.querySelector("#message").value,
-        };
-        $.ajax({
-          url: "https://api.dulliag.de/contact/v1/create.php",
-          data: contact,
-          method: "POST",
-          success: function (response) {
-            if (response == "1") {
-              form.reset();
-            }
-          },
-          error: function (error) {
-            console.error(error);
-          },
-        });
-      });
-    </script>
+    <script src="./assets/js/packages.js"></script>
+    <script src="./assets/js/projects.js"></script>
   </body>
 </html>
