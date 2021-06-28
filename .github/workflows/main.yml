@@ -1,15 +1,17 @@
 # This is a basic workflow to help you get started with Actions
 
 name: 🚀 Deploy website on push to our web-server
-on:
+on: 
   push:
     branches:
       - master
 jobs:
-  - name: 📂 Sync files
-    uses: SamKirkland/FTP-Deploy-Action@4.1.0
-    with:
-      server: dulliag.de
-      username: ftp_thorben
-      password: ${{ secrets.FTP_PASSWORD }}
-      server-dir: ./thorben.dulliag.de/
+  web-deploy:
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.1.0
+      with:
+        server: dulliag.de
+        username: ftp_thorben
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./
+        server-dir: ./thorben.dulliag.de/
