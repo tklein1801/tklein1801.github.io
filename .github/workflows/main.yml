@@ -10,6 +10,8 @@ jobs:
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.1.0
         with:
-          server: dulliag.de
-          username: ftp_thorben
+          server: ftp.samkirkland.com
+          username: myFtpUserName
           password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./assets
+          server-dir: ./thorben.dulliag.de/
