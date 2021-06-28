@@ -13,5 +13,5 @@ jobs:
           server: ftp.samkirkland.com
           username: myFtpUserName
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./assets
+          local-dir: ./assets/
           server-dir: ./thorben.dulliag.de/
