@@ -16,5 +16,4 @@ jobs:
         server: dulliag.de
         username: ftp_thorben
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./
         server-dir: ./thorben.dulliag.de/
