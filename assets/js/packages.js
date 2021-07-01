@@ -1,6 +1,6 @@
 (async () => {
   var package_list = [];
-  var response = await fetch(`https://api.npms.io/v2/search?q=scope:dulliag`);
+  var response = await fetch(`https://api.npms.io/v2/search?q=author:tklein1801`);
   var json = await response.json();
   package_list = json.results;
 
