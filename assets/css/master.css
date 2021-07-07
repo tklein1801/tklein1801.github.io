@@ -425,7 +425,8 @@ section {
 }
 
 .package-card {
-  width: calc((100% - 3em) / 4);
+  text-align: center;
+  width: calc((100% - 2em) / 3);
   margin-right: 1em;
 }
 
