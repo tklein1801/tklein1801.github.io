@@ -273,6 +273,7 @@ section {
 
     .repo-description,
     .repo-info > div,
+    .repo-info p,
     .repo-link {
       color: white !important;
     }
@@ -354,7 +355,7 @@ section {
     }
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 1025px) {
   aside {
     text-align: center;
     position: unset;

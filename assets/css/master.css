@@ -344,9 +344,11 @@ section {
 
 .project-card:hover .repo-description,
 .project-card:hover .repo-info > div,
+.project-card:hover .repo-info p,
 .project-card:hover .repo-link,
 .package-card:hover .repo-description,
 .package-card:hover .repo-info > div,
+.package-card:hover .repo-info p,
 .package-card:hover .repo-link {
   color: white !important;
 }
@@ -450,7 +452,7 @@ section {
   border-radius: 5px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1025px) {
   aside {
     text-align: center;
     position: unset;
