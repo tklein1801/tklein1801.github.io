@@ -46,17 +46,17 @@ body {
 }
 
 ::-moz-selection {
-  background: #02d463;
+  background: #fd7e14;
   color: #fff;
 }
 
 ::selection {
-  background: #02d463;
+  background: #fd7e14;
   color: #fff;
 }
 
 ::-moz-selection {
-  background: #02d463;
+  background: #fd7e14;
   color: #fff;
 }
 
@@ -87,7 +87,7 @@ body {
 }
 
 h1 {
-  color: #02d463;
+  color: #fd7e14;
 }
 
 p {
@@ -106,7 +106,7 @@ a:not(.repo-link) {
   z-index: 1;
   position: relative;
   border-bottom: 0;
-  color: #02d463;
+  color: #fd7e14;
   text-decoration: none;
 }
 
@@ -117,7 +117,7 @@ a:not(.repo-link)::before {
   bottom: 0;
   width: 100%;
   height: 0.1em;
-  background: #02d463;
+  background: #fd7e14;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   z-index: -1;
@@ -129,7 +129,7 @@ a:not(.repo-link):hover {
 
 a:not(.repo-link):hover::before {
   height: 100%;
-  background-color: #02d463;
+  background-color: #fd7e14;
 }
 
 aside {
@@ -224,7 +224,7 @@ section {
 #about h4 {
   margin-top: 0.5em;
   margin-bottom: 0.25em;
-  color: #02d463;
+  color: #fd7e14;
 }
 
 #about .skill-list {
@@ -247,15 +247,15 @@ section {
 
 #about .skill-list .skill-item:hover {
   cursor: default;
-  color: #02d463;
+  color: #fd7e14;
 }
 
 #about .skill-list .skill-item:hover p {
-  color: #02d463;
+  color: #fd7e14;
 }
 
 #about .skill-list .skill-item i {
-  color: #02d463;
+  color: #fd7e14;
 }
 
 #about .row div {
@@ -332,14 +332,20 @@ section {
 
 .project-card:hover,
 .package-card:hover {
-  border-color: #02d463;
+  border-color: #fd7e14;
+}
+
+.project-card:hover .repo-name,
+.package-card:hover .repo-name {
+  overflow: hiden;
+  text-overflow: ellipsis;
 }
 
 .project-card:hover .repo-name,
 .project-card:hover .repo-name > .repo-link,
 .package-card:hover .repo-name,
 .package-card:hover .repo-name > .repo-link {
-  color: #02d463 !important;
+  color: #fd7e14 !important;
 }
 
 .project-card:hover .repo-description,
