@@ -336,12 +336,6 @@ section {
 }
 
 .project-card:hover .repo-name,
-.package-card:hover .repo-name {
-  overflow: hiden;
-  text-overflow: ellipsis;
-}
-
-.project-card:hover .repo-name,
 .project-card:hover .repo-name > .repo-link,
 .package-card:hover .repo-name,
 .package-card:hover .repo-name > .repo-link {
@@ -368,6 +362,8 @@ section {
 .package-card .repo-name {
   margin-bottom: 0.4em;
   font-weight: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .project-card .repo-link,

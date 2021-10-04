@@ -268,10 +268,6 @@ section {
   &:hover {
     border-color: $accent;
 
-    .repo-name {
-      overflow: hiden;
-      text-overflow: ellipsis;
-    }
     .repo-name,
     .repo-name > .repo-link {
       color: $accent !important;
@@ -291,6 +287,8 @@ section {
   .repo-name {
     margin-bottom: 0.4em;
     font-weight: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .repo-link {
@@ -335,6 +333,7 @@ section {
     }
   }
 }
+
 .package-card {
   text-align: center;
   width: calc((100% - 2em) / 3);
