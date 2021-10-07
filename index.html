@@ -52,9 +52,13 @@
             <div>
               <h1 id="about-me">About me</h1>
               <p>
-                Hello! I'm just a little apprentice @ <a href="https://www.tchibo-karriere.de/karriere?gclid=CjwKCAjw-sqKBhBjEiwAVaQ9a6fhBbYIKNhbnMPBZA1ksit9o4VvcPldBhoTcReC1r5J4KKCkatMVhoC82QQAvD_BwE">Tchibo GmbH</a> who's doing some programming & other random stuff.
-                On this website you can have a look on projects & some other stuff I made in the
-                past...
+                Hello! I'm just a little apprentice @
+                <a
+                  href="https://www.tchibo-karriere.de/karriere?gclid=CjwKCAjw-sqKBhBjEiwAVaQ9a6fhBbYIKNhbnMPBZA1ksit9o4VvcPldBhoTcReC1r5J4KKCkatMVhoC82QQAvD_BwE"
+                  >Tchibo GmbH</a
+                >
+                who's doing some programming & other random stuff. On this website you can have a
+                look on projects & some other stuff I made in the past...
               </p>
 
               <h4>Skills I own...</h4>
@@ -96,7 +100,143 @@
       </main>
     </div>
 
-    <script src="./assets/js/packages.js"></script>
-    <script src="./assets/js/projects.js"></script>
+    <script>
+      window.onload = () => {
+        // Get projects
+        const privateRepos = fetch("https://api.github.com/users/tklein1801/repos").then(
+          (response) => response.json()
+        );
+        const orgRepos = fetch("https://api.github.com/orgs/dulliag/repos").then((response) =>
+          response.json()
+        );
+        Promise.all([privateRepos, orgRepos])
+          .then(([private, org]) => {
+            const projectNames = [
+              {
+                name: "A3RLRPG-Infoapp",
+                order: 1,
+              },
+              {
+                name: "A3RLRPG-Infopanel",
+                order: 2,
+              },
+              {
+                name: "DulliBot",
+                order: 3,
+              },
+              {
+                name: "tklein1801.github.io",
+                order: 4,
+              },
+              {
+                name: "BBS-Mitfahrzentrale",
+                order: 5,
+              },
+              {
+                name: "BBS-Grid-Website",
+                order: 6,
+              },
+              {
+                name: "Amazon-Price-Checker",
+                order: 7,
+              },
+              {
+                name: "ShoutBox",
+                order: 8,
+              },
+              {
+                name: "Context-Menu",
+                order: 9,
+              },
+            ];
+            const projectList = [];
+            projectList.fill({}, 0, projectNames.length);
+
+            private.forEach((repo) => {
+              const match = projectNames.filter((project) => project.name == repo.name),
+                isWanted = match.length == 1;
+              if (isWanted) projectList[match[0].order - 1] = repo;
+            });
+
+            org.forEach((repo) => {
+              const match = projectNames.filter((project) => project.name == repo.name),
+                isWanted = match.length == 1;
+              if (isWanted) projectList[match[0].order - 1] = repo;
+            });
+
+            projectList.forEach((repo) => {
+              const desc = repo.description !== null ? repo.description : "Keine Beschreibung";
+              document.querySelector("#projects").innerHTML += `<div class="project-card">
+                  <div>
+                    <h4 class="repo-name">
+                      <a href="${repo.owner.html_url}" class="repo-link">@${repo.owner.login}</a>/<a href="${repo.html_url}" class="repo-link">${repo.name}</a>  
+                    </h4>
+                    <p class="repo-description">${desc}</a>
+                    <div class="repo-info row">
+                      <div>
+                        <i class="far fa-file-alt"></i>
+                        <p>${repo.language}</p>
+                      </div>
+                      
+                      <div>
+                        <a href="${repo.html_url}/stargazers" class="repo-link row">
+                          <i class="far fa-star"></i>
+                          <p>${repo.stargazers_count}</p>
+                        </a>
+                      </div>
+
+                      <div>
+                        <a href="${repo.html_url}/network/members" class="repo-link row">
+                          <i class="fas fa-code-branch"></i>
+                          <p>${repo.forks_count}</p>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>`;
+            });
+          })
+          .catch((err) => console.error(err));
+
+        // Get packages
+        fetch(`https://api.npms.io/v2/search?q=author:tklein1801`)
+          .then((response) => response.json())
+          .then((json) => {
+            const package_list = json.results;
+
+            if (package_list.length == 0) {
+              document.querySelector("#packages").innerHTML += `<div class="package-card">
+                    <div>
+                      <h4 class="repo-name text-center mb-0">No packages found</h4>
+                    </div>
+                </div>`;
+            } else {
+              package_list.forEach((package) => {
+                let classList = "repo-name",
+                  desc = "",
+                  keywords = "";
+                if (package.package.keywords !== undefined) {
+                  package.package.keywords.forEach(
+                    (word) => (keywords += `<span class="keyword">${word}</span>`)
+                  );
+                }
+                if (package.package.description !== undefined) {
+                  desc = `<p class="repo-description">${package.package.description}</p>`;
+                }
+
+                if (desc == "" && keywords == "") classList += " mb-0";
+                document.querySelector("#packages").innerHTML += `<div class="package-card">
+                    <div>
+                      <h4 class="repo-name mb-0">
+                        <a href="${package.package.links.npm}" class="repo-link">${package.package.name} v${package.package.version}</a>
+                      </h4>
+                    </div>
+                  </div>`;
+              });
+            }
+          })
+          .catch((err) => console.error(err));
+      };
+    </script>
   </body>
 </html>
