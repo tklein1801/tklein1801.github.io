@@ -1,11 +1,11 @@
 @font-face {
-  font-family: "JetBrainsMono";
+  font-family: 'JetBrainsMono';
   src: url("../fonts/JetBrainsMono-Regular.eot");
   src: url("../fonts/JetBrainsMono-Regular.woff2") format("woff2"), url("../fonts/JetBrainsMono-Regular.woff") format("woff");
 }
 
 @font-face {
-  font-family: "JetBrainsMono-Bold";
+  font-family: 'JetBrainsMono-Bold';
   src: url("../fonts/JetBrainsMono-Bold.eot");
   src: url("../fonts/JetBrainsMono-Bold.woff2") format("woff2"), url("../fonts/JetBrainsMono-Bold.woff") format("woff");
 }
@@ -20,7 +20,7 @@ body {
   height: 100%;
   background-color: #212121 !important;
   scroll-behavior: smooth;
-  font-family: "JetBrainsMono" !important;
+  font-family: 'JetBrainsMono' !important;
   font-size: 1.05rem !important;
   color: #fff !important;
 }
@@ -98,11 +98,17 @@ p {
   color: rgba(255, 255, 255, 0.6);
 }
 
-p:hover {
-  color: white;
+.anchorjs-link {
+  -webkit-transition: 100ms !important;
+  transition: 100ms !important;
+  color: rgba(2, 212, 99, 0.4);
 }
 
-a:not(.repo-link) {
+.anchorjs-link:hover {
+  color: rgba(2, 212, 99, 0.8);
+}
+
+a:not(.repo-link):not(.anchorjs-link) {
   z-index: 1;
   position: relative;
   border-bottom: 0;
@@ -110,8 +116,8 @@ a:not(.repo-link) {
   text-decoration: none;
 }
 
-a:not(.repo-link)::before {
-  content: "";
+a:not(.repo-link):not(.anchorjs-link)::before {
+  content: '';
   position: absolute;
   left: 0px;
   bottom: 0;
@@ -123,11 +129,11 @@ a:not(.repo-link)::before {
   z-index: -1;
 }
 
-a:not(.repo-link):hover {
+a:not(.repo-link):not(.anchorjs-link):hover {
   color: white !important;
 }
 
-a:not(.repo-link):hover::before {
+a:not(.repo-link):not(.anchorjs-link):hover::before {
   height: 100%;
   background-color: #02d463;
 }
@@ -342,17 +348,6 @@ section {
   color: #02d463 !important;
 }
 
-.project-card:hover .repo-description,
-.project-card:hover .repo-info > div,
-.project-card:hover .repo-info p,
-.project-card:hover .repo-link,
-.package-card:hover .repo-description,
-.package-card:hover .repo-info > div,
-.package-card:hover .repo-info p,
-.package-card:hover .repo-link {
-  color: white !important;
-}
-
 .project-card > div,
 .package-card > div {
   width: 100%;
@@ -436,10 +431,6 @@ section {
 
 .package-card:nth-child(4n) {
   margin-right: 0;
-}
-
-.package-card:hover .keyword {
-  color: white !important;
 }
 
 .package-card .keyword-container .keyword {

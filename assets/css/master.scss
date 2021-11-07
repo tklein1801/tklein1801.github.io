@@ -1,14 +1,14 @@
 @font-face {
-  font-family: "JetBrainsMono";
-  src: url("../fonts/JetBrainsMono-Regular.eot");
-  src: url("../fonts/JetBrainsMono-Regular.woff2") format("woff2"),
-    url("../fonts/JetBrainsMono-Regular.woff") format("woff");
+  font-family: 'JetBrainsMono';
+  src: url('../fonts/JetBrainsMono-Regular.eot');
+  src: url('../fonts/JetBrainsMono-Regular.woff2') format('woff2'),
+    url('../fonts/JetBrainsMono-Regular.woff') format('woff');
 }
 @font-face {
-  font-family: "JetBrainsMono-Bold";
-  src: url("../fonts/JetBrainsMono-Bold.eot");
-  src: url("../fonts/JetBrainsMono-Bold.woff2") format("woff2"),
-    url("../fonts/JetBrainsMono-Bold.woff") format("woff");
+  font-family: 'JetBrainsMono-Bold';
+  src: url('../fonts/JetBrainsMono-Bold.eot');
+  src: url('../fonts/JetBrainsMono-Bold.woff2') format('woff2'),
+    url('../fonts/JetBrainsMono-Bold.woff') format('woff');
 }
 
 $accent: #02d463;
@@ -23,7 +23,7 @@ body {
   height: 100%;
   background-color: #212121 !important;
   scroll-behavior: smooth;
-  font-family: "JetBrainsMono" !important;
+  font-family: 'JetBrainsMono' !important;
   font-size: 1.05rem !important;
   color: #fff !important;
 }
@@ -78,18 +78,23 @@ p {
   transition: 200ms !important;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.6);
+}
+
+.anchorjs-link {
+  transition: 100ms !important;
+  color: rgba($color: $accent, $alpha: 0.4);
   &:hover {
-    color: white;
+    color: rgba($color: $accent, $alpha: 0.8);
   }
 }
-a:not(.repo-link) {
+a:not(.repo-link):not(.anchorjs-link) {
   z-index: 1;
   position: relative;
   border-bottom: 0;
   color: $accent;
   text-decoration: none;
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     left: 0px;
     bottom: 0;
@@ -163,7 +168,7 @@ section {
 }
 
 .header {
-  background-image: url("https://tklein1801.github.io/assets/images/bg.jpg");
+  background-image: url('https://tklein1801.github.io/assets/images/bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -255,6 +260,7 @@ section {
     margin-right: 0;
   }
 }
+
 .project-card,
 .package-card {
   cursor: default;
@@ -271,13 +277,6 @@ section {
     .repo-name,
     .repo-name > .repo-link {
       color: $accent !important;
-    }
-
-    .repo-description,
-    .repo-info > div,
-    .repo-info p,
-    .repo-link {
-      color: white !important;
     }
   }
   > div {
@@ -341,11 +340,9 @@ section {
   &:nth-child(4n) {
     margin-right: 0;
   }
-  &:hover {
-    .keyword {
-      color: white !important;
-    }
-  }
+  // &:last-child {
+  //   margin-bottom: 0;
+  // }
 
   .keyword-container {
     .keyword {
