@@ -11,6 +11,7 @@
     <link rel="icon" type="image/jpg" sizes="500x500" href="./assets/images/me.jpg" />
     <title>Thorben Klein</title>
     <link rel="stylesheet" href="./assets/css/master.css" />
+    <!-- FontAwesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -65,24 +66,53 @@
                 look on projects & some other stuff I made in the past...
               </p>
 
-              <h4 class="anchored">Skills I own...</h4>
-              <ul id="skills" class="skill-list">
-                <li class="skill-item"><i class="fab fa-html5"></i> HTML</li>
-                <li class="skill-item"><i class="fab fa-html5"></i> JSX</li>
-                <li class="skill-item"><i class="fab fa-css3-alt"></i> CSS</li>
-                <li class="skill-item"><i class="fab fa-sass"></i> SCSS</li>
-                <li class="skill-item"><i class="fab fa-js-square"></i> JavaScript</li>
-              </ul>
+              <div id="skills-container">
+                <div class="skill-column">
+                  <h4 class="anchored">Skills I own...</h4>
+                  <ul id="skills" class="skill-list">
+                    <li class="skill-item"><i class="fab fa-html5"></i> HTML</li>
+                    <li class="skill-item"><i class="fab fa-html5"></i> JSX</li>
+                    <li class="skill-item"><i class="fab fa-css3-alt"></i> CSS</li>
+                    <li class="skill-item"><i class="fab fa-sass"></i> SCSS</li>
+                    <li class="skill-item"><i class="fab fa-js-square"></i> JavaScript</li>
+                  </ul>
+                </div>
 
-              <h4 class="anchored">Frameworks & libaries</h4>
-              <ul id="frameworks" class="skill-list">
-                <li class="skill-item"><i class="fab fa-react"></i> ReactJS</li>
-                <li class="skill-item"><i class="fab fa-react"></i> React Native</li>
-                <li class="skill-item"><i class="fab fa-bootstrap"></i> Bootstrap</li>
-                <li class="skill-item"><i class="fa fa-database"></i> Firebase</li>
-                <li class="skill-item"><i class="fas fa-cross"></i> jQuery</li>
-              </ul>
+                <div class="skill-column">
+                  <h4 class="anchored">Frameworks</h4>
+                  <ul id="frameworks" class="skill-list">
+                    <li class="skill-item"><i class="fab fa-react"></i> ReactJS</li>
+                    <li class="skill-item"><i class="fab fa-react"></i> React Native</li>
+                    <li class="skill-item"><i class="fab fa-bootstrap"></i> Bootstrap</li>
+                    <li class="skill-item"><i class="fa fa-database"></i> Firebase</li>
+                    <li class="skill-item"><i class="fas fa-cross"></i> jQuery</li>
+                  </ul>
+                </div>
+
+                <div class="skill-column achievements">
+                  <h4 class="anchored">Achievements</h4>
+                  <div id="achievement">
+                    <div class="stats-card">
+                      <h5 id="total-projects" class="count">0</h5>
+                      <p class="label">Total Projects</p>
+                    </div>
+                    <div class="stats-card">
+                      <h5 id="issues" class="count">0</h5>
+                      <p class="label">Issues Resolved</p>
+                    </div>
+                    <div class="stats-card">
+                      <h5 id="followers" class="count">0</h5>
+                      <p class="label">GitHub Followers</p>
+                    </div>
+                    <div class="stats-card">
+                      <h5 id="experience" class="count">0</h5>
+                      <p class="label">Years Experience</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+
             <div>
               <img class="me" src="./assets/images/me.jpg" alt="Picure of mine" />
             </div>
@@ -112,6 +142,25 @@
     </script>
     <script>
       window.onload = () => {
+        fetch('https://api.dulliag.de/gh/tklein1801/stats')
+          .then((response) => response.json())
+          .then((json) => {
+            document.querySelector('#achievement #total-projects').innerHTML =
+              json.data.viewer.repositories.totalCount;
+
+            document.querySelector('#achievement #issues').innerHTML =
+              json.data.viewer.issues.totalCount;
+
+            document.querySelector('#achievement #followers').innerHTML =
+              json.data.viewer.followers.totalCount;
+
+            document.querySelector('#achievement #experience').innerHTML =
+              Math.abs(
+                new Date(Date.now() - new Date(json.data.viewer.createdAt)).getUTCFullYear() - 1971
+              ) + `+`;
+          })
+          .catch((err) => console.error(err));
+
         // Get projects
         const privateRepos = fetch('https://api.github.com/users/tklein1801/repos').then(
           (response) => response.json()
@@ -167,7 +216,7 @@
               document.querySelector('#projects').innerHTML += `<div class="project-card">
                   <div>
                     <h4 class="repo-name">
-                      <a href="${repo.owner.html_url}" class="repo-link">@${repo.owner.login}</a>/<a href="${repo.html_url}" class="repo-link">${repo.name}</a>  
+                      <a href="${repo.owner.html_url}" class="repo-link">@${repo.owner.login}</a>/<a href="${repo.html_url}" class="repo-link">${repo.name}</a>
                     </h4>
                     <p class="repo-description">${desc}</a>
                     <div class="repo-info row">
@@ -175,7 +224,7 @@
                         <i class="far fa-file-alt"></i>
                         <p>${repo.language}</p>
                       </div>
-                      
+
                       <div>
                         <a href="${repo.html_url}/stargazers" class="repo-link row">
                           <i class="far fa-star"></i>
