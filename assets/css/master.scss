@@ -410,9 +410,6 @@ section {
   text-align: center;
   width: calc((100% - 2em) / 3);
   margin-right: 1em;
-  &:last-child {
-    margin-bottom: 0 !important;
-  }
   &:nth-child(4n) {
     margin-right: 0;
   }
